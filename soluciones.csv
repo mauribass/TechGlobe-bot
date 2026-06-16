@@ -1,0 +1,11 @@
+clave,solucion
+excel,"Cerrá y volvé a abrir Excel. Si el problema persiste, repará Office desde Panel de Control > Programas > Microsoft Office > Cambiar > Reparar."
+internet,"Verificá que el cable de red esté conectado o que el WiFi esté activo. Reiniciá el router desenchufándolo 30 segundos. Si el problema persiste, contactá a tu proveedor."
+wifi,"Desconectate y volvé a conectarte a la red WiFi. Si no funciona, olvidá la red y volvé a ingresarla. Reiniciá el router si es necesario."
+impresora,"Verificá que la impresora esté encendida y conectada. Cancelá todos los trabajos de impresión pendientes desde Panel de Control > Dispositivos e impresoras."
+pantalla,"Verificá que el cable del monitor esté bien conectado. Probá reiniciando la computadora. Si la pantalla sigue sin señal, el cable puede estar dañado."
+lento,"Cerrá los programas que no estés usando. Reiniciá la computadora. Si el problema persiste, puede haber actualizaciones pendientes o poco espacio en disco."
+reiniciar,"Guardá tu trabajo, cerrá todos los programas y reiniciá la computadora desde el menú Inicio > Reiniciar."
+password,"Para restablecer tu contraseña, contactá al administrador de sistemas o usá la opción 'Olvidé mi contraseña' en la pantalla de inicio de sesión."
+virus,"No abras archivos ni links sospechosos. Ejecutá el antivirus instalado en tu equipo. Si no tenés antivirus, contactá a IT de inmediato."
+correo,"Verificá tu conexión a internet. Cerrá y volvé a abrir el cliente de correo. Si usás webmail, probá en otro navegador."

@@ -1,0 +1,2 @@
+ticket_id,chat_id,nombre,sector,tipo_problema,descripcion,resuelto,derivado_it,fecha_hora
+1,5654660342,ana lópez,Ventas,Software,"no puedo abrir excel, me da error al iniciar",True,False,2026-06-16 19:11
