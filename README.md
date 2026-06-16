@@ -257,3 +257,140 @@ Esto mantiene ambos archivos CSV en tu máquina local y el contenedor los lee y 
 - **CSV** — Persistencia de datos
 - **Telegram Bot API**
 - **Docker** — Empaquetado y despliegue del bot en contenedor
+
+---
+
+## Manual de Usuario
+
+### ¿Qué es este bot?
+
+El bot de soporte técnico de TechGlobe SRL permite a los empleados reportar incidentes técnicos directamente desde Telegram. Guía al usuario paso a paso, intenta resolver el problema de forma automática y, si no puede, genera un ticket formal para el equipo de IT.
+
+Está disponible las 24 horas del día, los 7 días de la semana.
+
+---
+
+### Cómo acceder
+
+1. Abrí Telegram en tu celular o computadora.
+2. Buscá el bot por su nombre de usuario (por ejemplo: `@TechGlobeIT_bot`).
+3. Tocá **START** o escribí `/start` para comenzar.
+
+---
+
+### Comandos disponibles
+
+| Comando | Descripción | Cuándo usarlo |
+|---|---|---|
+| `/start` | Inicia o reinicia el proceso de soporte | Al abrir el bot por primera vez o para registrar un nuevo incidente |
+| (texto libre) | Responde a las preguntas del bot | En cada paso donde el bot solicita información |
+| Botones de pantalla | Selecciona sector, tipo de problema y confirmación | Cuando el bot presenta opciones interactivas |
+
+---
+
+### Flujo paso a paso
+
+| Paso | Quién actúa | Acción | Respuesta del bot |
+|---|---|---|---|
+| 1 | Usuario | Envía `/start` | Bienvenida y solicita nombre completo |
+| 2 | Usuario | Escribe su nombre completo | Confirma el nombre y muestra botones de sector |
+| 3 | Usuario | Selecciona su sector con el botón | Confirma el sector y muestra botones de categoría |
+| 4 | Usuario | Selecciona el tipo de problema (Hardware, Software, Red u Otro) | Confirma la categoría y solicita descripción |
+| 5 | Usuario | Describe el problema (mínimo 10 caracteres) | Busca solución en la base de datos (Gateway 1) |
+| 6a | Bot | Solución encontrada | Envía la solución estándar y pregunta si fue resuelto |
+| 6b | Bot | Solución no encontrada | Informa que no hay solución estándar y pregunta si fue resuelto por cuenta propia |
+| 7a | Usuario | Confirma que el problema fue resuelto (botón ✅ Sí) | Cierra el ticket como resuelto y muestra el resumen |
+| 7b | Usuario | Informa que el problema no fue resuelto (botón ❌ No) | Genera ticket y lo deriva al equipo de IT |
+
+---
+
+### Sectores habilitados
+
+El bot valida que el sector ingresado sea uno de los siguientes:
+
+| Sector |
+|---|
+| Administración |
+| Ventas |
+| Desarrollo |
+| Logística |
+| Recursos Humanos |
+
+Si tu sector no aparece, contactá al área de IT para que lo incorporen.
+
+---
+
+### Mensajes de error y qué hacer
+
+| Situación | Mensaje del bot | Qué hacer |
+|---|---|---|
+| Nombre con números o símbolos | ⚠️ El nombre solo puede contener letras y espacios. | Escribí solo letras, sin caracteres especiales |
+| Sector no registrado | ⚠️ El sector ingresado no está registrado. Seleccioná uno de los botones. | Usá los botones que aparecen en pantalla |
+| Tipo de problema no seleccionado correctamente | ⚠️ Opción no válida. Utilizá los botones en pantalla. | Tocá uno de los botones de categoría |
+| Descripción muy corta (menos de 10 caracteres) | ⚠️ La descripción es muy breve. Describí el problema con más detalle. | Escribí una descripción más completa |
+| Respuesta inválida en la confirmación final | ⚠️ Por favor, respondé utilizando los botones de la pantalla. | Tocá el botón Sí o No |
+| `/start` en medio del flujo | Reiniciando el proceso. Por favor ingresá tu nombre: | El bot borra el progreso anterior e inicia desde cero |
+
+---
+
+### Ejemplos de uso
+
+**Ejemplo 1 — Problema conocido resuelto automáticamente**
+
+> Un empleado no puede abrir Excel.
+
+```
+Usuario → /start
+Bot     → ¡Bienvenido! ¿Cuál es tu nombre completo?
+Usuario → María González
+Bot     → ¿En qué sector trabajás? [botones]
+Usuario → [toca] Administración
+Bot     → ¿Qué tipo de problema tenés? [botones]
+Usuario → [toca] 2️⃣ Software
+Bot     → Describí brevemente el problema (mínimo 10 caracteres):
+Usuario → No puedo abrir Excel, me da error al iniciar
+Bot     → Encontré una solución: Cerrá y volvé a abrir Excel...
+          ¿Pudiste resolver el problema? [Sí / No]
+Usuario → [toca] 🟢 Sí
+Bot     → ¡Perfecto! El ticket #5 fue cerrado como resuelto.
+```
+
+**Ejemplo 2 — Problema derivado al equipo de IT**
+
+> Un empleado tiene la pantalla del monitor sin señal.
+
+```
+Usuario → /start
+Bot     → ¡Bienvenido! ¿Cuál es tu nombre completo?
+Usuario → Carlos Méndez
+Bot     → ¿En qué sector trabajás? [botones]
+Usuario → [toca] Logística
+Bot     → ¿Qué tipo de problema tenés? [botones]
+Usuario → [toca] 1️⃣ Hardware
+Bot     → Describí brevemente el problema (mínimo 10 caracteres):
+Usuario → El monitor no muestra imagen desde esta mañana
+Bot     → No encontré una solución estándar.
+          ¿Pudiste resolverlo por tu cuenta? [Sí / No]
+Usuario → [toca] 🔴 No
+Bot     → Ticket #6 generado y derivado al equipo de IT.
+          Un técnico se pondrá en contacto a la brevedad.
+```
+
+---
+
+### Preguntas frecuentes
+
+**¿Puedo usar el bot desde la computadora?**
+Sí. Telegram está disponible para Windows, macOS y Linux, además de dispositivos móviles.
+
+**¿El bot recuerda mis datos de sesiones anteriores?**
+No. Cada `/start` inicia un proceso nuevo desde cero. Esto garantiza que cada ticket quede registrado correctamente.
+
+**¿Qué pasa si el bot no encuentra solución para mi problema?**
+Genera un ticket formal y lo deriva al equipo de IT, quien se pondrá en contacto a la brevedad.
+
+**¿Puedo cancelar un proceso a mitad del flujo?**
+Sí. Escribí `/start` en cualquier momento para reiniciar. El ticket incompleto no queda registrado.
+
+**¿En qué horario funciona el bot?**
+El bot está disponible 24/7. La atención del equipo de IT para tickets derivados se realiza en horario laboral.
