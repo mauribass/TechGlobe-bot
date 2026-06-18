@@ -13,7 +13,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 # CONFIGURACIÓN
 # ============================================================
 
-TOKEN = "8677218997:AAEXEKDQqgjDGHsFVEgSUepqya_5isa76LY"  # Reemplazá con tu token real
+TOKEN = ""  # Reemplazá con tu token real
 
 ARCHIVO_TICKETS = "tickets.csv"
 ARCHIVO_SOLUCIONES = "soluciones.csv"
