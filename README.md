@@ -17,7 +17,7 @@ Bot de Telegram que automatiza el proceso de soporte técnico nivel 1 para TechG
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/techglobe-soporte-bot.git
+git clone https://github.com/tu-usuario/techglobe-soporte-bot.git](https://github.com/mauribass/TechGlobe-bot
 cd techglobe-soporte-bot
 ```
 
