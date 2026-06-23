@@ -18,7 +18,7 @@ Bot de Telegram que automatiza el proceso de soporte técnico nivel 1 para TechG
 
 ```bash
 git clone https://github.com/mauribass/TechGlobe-bot
-cd techglobe-soporte-bot
+cd TechGlobe-bot
 ```
 
 ### 2. Crear un entorno virtual (recomendado)
